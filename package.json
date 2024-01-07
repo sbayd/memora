@@ -1,7 +1,7 @@
 {
   "name": "memora",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Memora: A lightweight, TTL-based JavaScript caching library. It efficiently memoizes function outputs, supporting multiple storage options like memory and localStorage for optimized performance.",
   "source": "src/index.js",
   "main": "dist/main.js",
