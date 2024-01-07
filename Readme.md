@@ -12,69 +12,71 @@ Memora is a highly efficient, customizable JavaScript caching library designed f
 
 ## Installation
 
-Install Memora via npm:
-
-bashCopy code
+Install Memora via npm, yarn or pnpm
 
 ```bash
 npm install memora
+yarn add memora
+pnpm add memora
 ``` 
 
 ## Basic Usage
 
 ### Importing
 
-javascriptCopy code
-
-`import { Memora } from 'memora';` 
+```javascript
+import { Memora } from 'memora';
+``` 
 
 ### Simple Memoization
 
-javascriptCopy code
-
-`const memora = new Memora();
+```javascript
+const memora = new Memora();
 const square = (n) => n * n;
 const memoizedSquare = memora.memoize(square);
 
 console.log(memoizedSquare(4));  // Computed
-console.log(memoizedSquare(4));  // Cached` 
+console.log(memoizedSquare(4));  // Cached
+``` 
 
 ## Advanced Usage
 
 ### Memoizing Async Functions
 
-javascriptCopy code
 
-`const fetchData = async (id) => { /* ... */ };
+```javascript
+const fetchData = async (id) => { /* ... */ };
 const memoizedFetchData = memora.memoizeAsync(fetchData);
 
 memoizedFetchData('abc').then(console.log);  // Computed
-memoizedFetchData('abc').then(console.log);  // Cached` 
+memoizedFetchData('abc').then(console.log);  // Cached
+``` 
 
 ### Using Custom Hash Function
 
-javascriptCopy code
-
-`const customHashFunction = (input) => { /* ... */ };
+```javascript
+const customHashFunction = (input) => { /* ... */ };
 const customMemora = new Memora();
-customMemora.setHasher(customHashFunction);` 
+customMemora.setHasher(customHashFunction);
+```
 
 ### Custom Key Generator
 
-javascriptCopy code
 
-`const customKeyGenerator = (func, ...args) => 'custom_' + JSON.stringify(args);
-customMemora.setKeyGenerator(customKeyGenerator);` 
+```javascript
+const customKeyGenerator = (func, ...args) => 'custom_' + JSON.stringify(args);
+customMemora.setKeyGenerator(customKeyGenerator);
+``` 
 
 ## API Documentation
 
 -   **`Memora(options)`**: Constructor to create a new Memora instance.
     
     -   `options`: Object (optional)
-        -   `name`: String (optional) - Unique name for the function caching.
+        -   `name`: String (optional) - Unique name for the function caching (if not provided function content will be used).
         -   `prefix`: String (optional) - Prefix for cache keys.
-        -   `Storage`: StorageProvider (optional) - Storage provider for caching.
-        -   `TTL`: Number (optional) - Time to live for cached data in milliseconds.
+        -   `Storage`: StorageProvider (optional) - Storage provider for caching, default localStorage
+        -   `TTL`: Number (milliseconds) - Time to live for cached data in milliseconds, default 1 day.
 -   **`memoize(func)`**: Memoizes a given function.
     
     -   `func`: Function - The function to be memoized.
