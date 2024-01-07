@@ -6,8 +6,7 @@ const heavyFunction = (a, b) => {
   return a + b;
 };
 
-const memoizedHeavyFunction = new Memora({
-  name: 'user-getter'
-}).memoize(heavyFunction);
-console.log('will call');
-console.log(memoizedHeavyFunction(1, 2));
+const memoizedHeavyFunction = new Memora().memoize(heavyFunction);
+
+console.log(memoizedHeavyFunction(1, 2)); // computed
+console.log(memoizedHeavyFunction(1, 2)); // cached
