@@ -1,0 +1,18 @@
+{
+  "name": "memora-example",
+  "version": "1.0.0",
+  "source": "index.html",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "memora": "link:../"
+  },
+  "scripts": {
+    "start": "parcel --no-cache"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "2.10.3"
+  }
+}

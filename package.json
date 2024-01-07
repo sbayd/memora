@@ -1,0 +1,41 @@
+{
+  "name": "memora",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Memora: A lightweight, TTL-based JavaScript caching library. It efficiently memoizes function outputs, supporting multiple storage options like memory and localStorage for optimized performance.",
+  "source": "src/index.js",
+  "main": "dist/main.js",
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbayd/memora.git"
+  },
+  "keywords": [
+    "memoizer",
+    "memoization",
+    "memo",
+    "cache",
+    "cacher",
+    "performance",
+    "optimization"
+  ],
+  "author": "sbayd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sbayd/memora/issues"
+  },
+  "homepage": "https://github.com/sbayd/memora#readme",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-semistandard": "^17.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "oxlint": "^0.1.1",
+    "parcel": "2.10.3"
+  }
+}
